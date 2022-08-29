@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import styles from './styles.module.css';
+import Start from './Start/start';
+import SelectPokemons from './SelectPokemons/SelectPokemons';
+import Battle from './Battle/battle';
+import PostBattle from './PostBattle/postbattle';
+
 
 function App() {
+
+  const [mode,setMode] = useState('select');
+  const [username, setUsername] = useState ('Nat');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.main}>
+      {mode === 'start' && (<Start
+      onStartClick={()=>setMode('select')}
+      onUsernameChange={(event)=>setUsername (event.target.value)}/>)}
+
+      {mode === 'select' && (<SelectPokemons username={username}/>)}
+
+      {mode === 'battle' && (<Battle onClick={()=>setMode('end')}/>)}
+
+      {mode === 'end' && (<PostBattle onClick={()=>setMode('start')}/>)}
     </div>
   );
-}
+};
 
 export default App;
+
+
