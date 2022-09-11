@@ -1,0 +1,10 @@
+.container {
+    background-color: white;
+    width: 220px;
+    height: 250px;
+    margin: 5px;
+}
+
+.image{
+    height: 200px;
+}

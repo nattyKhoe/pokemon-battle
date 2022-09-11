@@ -1,12 +1,12 @@
 import React from 'react';
+import styles from './styles.module.css';
 
-
-const PokemonCard = (pokemon) => {
+const PokemonCard = ({pokemon}) => {
     return (
-        <React.Fragment>
-            <h1>{pokemon.name}</h1>
-            <img src={pokemon.url} alt={pokemon.name}/>
-        </React.Fragment>
+        <div className={styles.container}>
+            <h1>{pokemon.name.toUpperCase()}</h1>
+            <img className={styles.image} src={pokemon.url} alt={pokemon.name}/>
+        </div>
     )
 }
 export default PokemonCard;
