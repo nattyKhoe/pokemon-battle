@@ -1,8 +1,13 @@
+import React from 'react';
 import styles from './styles.module.css';
 
-const Battle = () => {
+const Battle = ({onBattleClick}) => {
  return (
-    <div className={styles.main}>Battle Component</div>
+   <React.Fragment>
+   <div className={styles.main}>Battle Component</div>
+   <button onClick={onBattleClick}>End</button>
+   </React.Fragment>
+    
  )
 }
 

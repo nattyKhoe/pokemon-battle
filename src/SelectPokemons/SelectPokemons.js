@@ -1,17 +1,18 @@
 import React from 'react';
-import PokemonCard from './PokemonCard';
 import pokemons from '../shared/characters';
+import styles from './styles.module.css';
+import PokemonCard from './PokemonCard';
 
-const SelectPokemons = () =>{
+
+const SelectPokemons = ({username, onSelectClick}) =>{
     return (
         <React.Fragment>
+            <h1 className={styles.h1}>Welcome {username}</h1>
+            <h1> Select Pokemons </h1>
             {pokemons.map(pokemon=>(
-                // <div>
-                //     <h1>{pokemon.name}</h1>
-                //     <img src={pokemon.url} alt={pokemon.name}/>
-                // </div>
-                <PokemonCard pokemon={pokemon} key={pokemon.name}/>
+                <PokemonCard pokemon={pokemon} key={pokemon.name} className={pokemon.isSelected}/>
             ))}
+            <button onClick={onSelectClick}>Battle</button>
         </React.Fragment>
     )
 };

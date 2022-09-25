@@ -1,5 +1,4 @@
-// const pokemons = [clefairy, charmander, squirtle, pikachu, bulbasaurs, evee, "growlithe", "horsea", "voltorb", "tangela"];
-import bulbasaursImg from '../assets/Bulbasaurs.png'
+import bulbasaurImg from '../assets/Bulbasaur.png'
 import charmanderImg from '../assets/Charmander.png'
 import clefairyImg from '../assets/Clefairy.png'
 import eveeImg from '../assets/Evee.png'
@@ -10,55 +9,65 @@ import squirtleImg from '../assets/Squirtle.png'
 import tangelaImg from '../assets/Tangela.png'
 import voltorbImg from '../assets/Voltorb.png'
 
-const bulbasaurs ={
-    name: "bulbasaurs",
-    url: bulbasaursImg
+const bulbasaur ={
+    name: "bulbasaur",
+    url: bulbasaurImg,
+    isSelected: false
 }
 
 const clefairy = {
     name:"clefairy",
-    url: clefairyImg
+    url: clefairyImg,
+    isSelected: false
 };
 
 const charmander ={
     name:"charmander",
-    url: charmanderImg
+    url: charmanderImg,
+    isSelected: false
 }
 
 const evee ={
     name:"evee",
-    url: eveeImg
+    url: eveeImg,
+    isSelected: false
 }
 
 const growlithe ={
     name:"growlithe",
-    url: growlitheImg
+    url: growlitheImg,
+    isSelected: false
 }
 
 const horsea ={
     name:"horsea",
-    url: horseaImg
+    url: horseaImg,
+    isSelected: false
 }
 
 const pikachu ={
     name:"pikachu",
-    url: pikachuImg
+    url: pikachuImg,
+    isSelected: false
 }
 
 const squirtle ={
     name:"squirtle",
-    url: squirtleImg
+    url: squirtleImg,
+    isSelected: false
 }
 
 const tangela ={
     name:"tangela",
-    url: tangelaImg
+    url: tangelaImg,
+    isSelected: false
 }
 
 const voltorb ={
     name:"voltorb",
-    url: voltorbImg
+    url: voltorbImg,
+    isSelected: false
 }
-const pokemons = [bulbasaurs, clefairy, charmander, evee, growlithe, horsea, pikachu, squirtle, tangela, voltorb];
+const pokemons = [bulbasaur, clefairy, charmander, evee, growlithe, horsea, pikachu, squirtle, tangela, voltorb];
 
 export default pokemons;

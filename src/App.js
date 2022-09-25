@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState, useEffect} from 'react';
 import styles from './styles.module.css';
 import Start from './Start/start';
 import SelectPokemons from './SelectPokemons/SelectPokemons';
@@ -8,20 +8,22 @@ import PostBattle from './PostBattle/postbattle';
 
 function App() {
 
-  const [mode,setMode] = useState('select');
+  const [mode,setMode] = useState('Select');
   const [username, setUsername] = useState ('Nat');
+  const [winner, setWinner] = useState();
 
   return (
     <div className={styles.main}>
-      {mode === 'start' && (<Start
-      onStartClick={()=>setMode('select')}
-      onUsernameChange={(event)=>setUsername (event.target.value)}/>)}
+      {mode === 'start' && (<Start onStartClick={(username)=>{
+        setMode('select');
+        setUsername(username);
+      }}/>)}
 
-      {mode === 'select' && (<SelectPokemons username={username}/>)}
+      {mode === 'select' && (<SelectPokemons username={username} onSelectClick={()=>setMode('battle')}/>)}
 
-      {mode === 'battle' && (<Battle onClick={()=>setMode('end')}/>)}
+      {mode === 'battle' && (<Battle onBattleClick={()=>setMode('end')}/>)}
 
-      {mode === 'end' && (<PostBattle onClick={()=>setMode('start')}/>)}
+      {mode === 'end' && (<PostBattle onEndClick={()=>setMode('start')}/>)}
     </div>
   );
 };
